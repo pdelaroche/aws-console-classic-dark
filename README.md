@@ -119,6 +119,23 @@ so they are Ayu colours, not the classic AWS ones. This project does not change 
 
 Stylus → **Manage** → untick the style, or delete it.
 
+## Security
+
+- **It is only CSS.** The theme only changes colours. It has no JavaScript,
+  no `url()` and no `@import`. It does not load anything from other sites
+  and it does not send any data.
+- **It cannot touch your AWS account.** It cannot call AWS, read your
+  credentials or change your resources. If you turn it off, the console is
+  exactly as before.
+- **Updates come from this repo.** Stylus downloads new versions from the
+  `main` branch. If you do not want this, turn off updates for this style in
+  Stylus. You can also read the file before you install a new version.
+- **The extension has wide access.** Like any style extension, Stylus can
+  read and change every website. Install it only from the official stores
+  (links above).
+- **At work:** many companies do not allow browser extensions on the browser
+  you use for production accounts. Ask your security team first.
+
 ## Credits
 
 - Base theme: [igreg](https://github.com/igreg) (Gregory Becker), MIT licence (see `base/LICENSE`).
