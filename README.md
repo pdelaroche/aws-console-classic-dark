@@ -7,28 +7,43 @@ It brings back the look of the **classic AWS dark mode**:
 - Cool grey text
 - **AWS orange** highlights (main button, active tab, checkboxes...)
 
+![Console Home with the Classic Dark theme](screenshots/console-home.png)
+
+| EC2 – Launch an instance | S3 – Buckets and CloudShell |
+|---|---|
+| ![EC2 launch instance page](screenshots/ec2-launch-instance.png) | ![S3 buckets page with CloudShell](screenshots/s3-buckets.png) |
+| **VPC – Your VPCs** | |
+| ![VPC list page](screenshots/vpc-your-vpcs.png) | |
+
 It is built on top of the theme
 [aws-console-ui-theme-ayu-dark](https://github.com/igreg/aws-console-ui-theme-ayu-dark)
-by [igreg](https://github.com/igreg) (Gregory Becker, MIT licence). That theme finds the colour tokens of the console.
-This project only changes the colours.
+by [igreg](https://github.com/igreg) (Gregory Becker, MIT licence). That theme does the hard part: it lists the console's internal colour tokens.
+This project keeps that list and only swaps the colours.
 
 ## What you need
 
-- Firefox or Chrome with the **Stylus** extension.
-- The AWS console in dark mode: **Settings → Visual mode → Dark**.
+- A browser with the **Stylus** extension: Chrome, Firefox, Edge, Brave, Vivaldi, Arc or Opera.
+  Safari is not supported (there is no Stylus for Safari).
+- The AWS console in dark mode: click the **gear icon** in the top bar → **Visual mode** → **Dark**.
 
 ## How to install
 
-1. Install the **Stylus** extension in your browser.
+1. Install the **Stylus** extension in your browser:
+
+   | Browser | Where to get Stylus |
+   |---|---|
+   | Chrome | [Chrome Web Store](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) |
+   | Firefox | [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/styl-us/) |
+   | Edge | [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/stylus/ffljdddodmkedhkcjhpmdajhjdbkogke) |
+   | Brave, Vivaldi, Arc | [Chrome Web Store](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) (these browsers use Chrome extensions) |
+   | Opera | [Chrome Web Store](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne). The version in the Opera add-ons store is old. To install from the Chrome Web Store, first add Opera's **Install Chrome Extensions** add-on. |
+
 2. Open this link:
    https://raw.githubusercontent.com/pdelaroche/aws-console-classic-dark/main/aws-classic-dark.user.css
 3. Stylus opens an install page. Click **Install style**.
 4. Open the AWS console and reload the page (Cmd+Shift+R or Ctrl+Shift+R).
 
 That's all. Stylus checks this link for new versions.
-
-**Tip:** in the Stylus options, turn on styling for **iframes**.
-Many AWS services show their page inside an iframe.
 
 ## How to change the colours
 
@@ -67,10 +82,11 @@ Turn off updates for this style if you want to keep them.
 | `--tpl-selection` | Background of selected text |
 | `--tpl-nav-title` | Titles in the side menu |
 
-The light versions of the highlight colour are made automatically.
+Two see-through versions of the highlight colour (`--tpl-accent-soft`, `--tpl-accent-softer`)
+are made automatically from `--tpl-accent`. Do not add them to the PALETTE block.
 
-Status colours (green, red, yellow) and badge colours come from the base theme.
-This project does not change them.
+Status colours (green, red, yellow) and badge colours come from the base theme,
+so they are Ayu colours, not the classic AWS ones. This project does not change them.
 
 ## Change the colours with AI
 
@@ -88,15 +104,16 @@ This project does not change them.
 | `build.py` | Makes the theme from the base theme and the palette |
 | `base/` | The original Ayu Dark theme and its licence |
 | `prompt-ai.md` | A prompt to make new colours with AI |
+| `screenshots/` | Preview images for this README |
 
 ## Problems and fixes
 
 | Problem | Possible cause | Fix |
 |---|---|---|
 | Nothing changes after install | Browser cache | Reload with Cmd+Shift+R |
-| Nothing changes after reload | The console is in light mode | Settings → Visual mode → Dark |
-| One AWS service is still grey | AWS changed its internal tokens | Get the new base theme, put it in `base/`, run `python3 build.py` |
-| Part of a page is not themed | Stylus does not style iframes | Turn on iframe styling in the Stylus options |
+| Nothing changes after reload | The console is in light mode | Gear icon → Visual mode → Dark |
+| One AWS service (or part of a page) is still grey | That service uses colour tokens the base theme does not know yet | Get the newest `aws-console.ayu-dark-theme.css` from the [base theme](https://github.com/igreg/aws-console-ui-theme-ayu-dark), put it in `base/`, run `python3 build.py` |
+| Nothing changes on the China console | The theme only matches `console.aws.amazon.com` | Not supported (`console.amazonaws.cn` is a different domain) |
 
 ## How to remove it
 
