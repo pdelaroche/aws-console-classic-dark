@@ -3,7 +3,7 @@
 
   /* Backgrounds (dark to light) */
   --tpl-bg:             #0f1b2a;
-  --tpl-panel:          #16191f;
+  --tpl-panel:          #142030;
   --tpl-surface:        #192534;
   --tpl-surface-2:      #1e2b3b;
   --tpl-hover:          #232f3e;
@@ -27,6 +27,14 @@
   --tpl-accent:         #ff9900;
   --tpl-accent-hover:   #ffac31;
   --tpl-accent-active:  #ec7211;
+  --tpl-on-accent:      #0b0e14;
+
+  /* Links and info blue */
+  --tpl-link:           #59c2ff;
+  --tpl-link-hover:     #8cd0ff;
+
+  /* Text selection */
+  --tpl-selection:      #409fff4d;
 
   /* Side menu titles */
   --tpl-nav-title:      #e9ebed;

@@ -9,7 +9,7 @@ It brings back the look of the **classic AWS dark mode**:
 
 It is built on top of the theme
 [aws-console-ui-theme-ayu-dark](https://github.com/igreg/aws-console-ui-theme-ayu-dark)
-by Gregory Becker (MIT licence). That theme finds the colour tokens of the console.
+by [igreg](https://github.com/igreg) (Gregory Becker, MIT licence). That theme finds the colour tokens of the console.
 This project only changes the colours.
 
 ## What you need
@@ -27,7 +27,7 @@ This project only changes the colours.
 
 That's all. Stylus checks this link for new versions.
 
-**Tip:** in the Stylus options, keep **"Apply to iframes"** on.
+**Tip:** in the Stylus options, turn on styling for **iframes**.
 Many AWS services show their page inside an iframe.
 
 ## How to change the colours
@@ -48,6 +48,8 @@ Turn off updates for this style if you want to keep them.
 1. Edit `palette.css`.
 2. Run `python3 build.py`.
 3. The script makes a new `aws-classic-dark.user.css`.
+4. To publish an update, change `VERSION` in `build.py` before you run it.
+   Stylus only finds updates when the version number changes.
 
 | Variable | What it colours |
 |---|---|
@@ -60,9 +62,15 @@ Turn off updates for this style if you want to keep them.
 | `--tpl-heading` | Titles |
 | `--tpl-accent` | Highlights: main button, active tab, checkboxes... |
 | `--tpl-accent-hover` / `--tpl-accent-active` | Highlight on mouse over / on click |
+| `--tpl-on-accent` | Text and icons on orange (main button, checkboxes) |
+| `--tpl-link` / `--tpl-link-hover` | Links and blue info elements |
+| `--tpl-selection` | Background of selected text |
 | `--tpl-nav-title` | Titles in the side menu |
 
 The light versions of the highlight colour are made automatically.
+
+Status colours (green, red, yellow) and badge colours come from the base theme.
+This project does not change them.
 
 ## Change the colours with AI
 
@@ -85,10 +93,10 @@ The light versions of the highlight colour are made automatically.
 
 | Problem | Possible cause | Fix |
 |---|---|---|
-| Nothing changes | Browser cache | Reload with Cmd+Shift+R |
-| No change at all | The console is in light mode | Settings → Visual mode → Dark |
+| Nothing changes after install | Browser cache | Reload with Cmd+Shift+R |
+| Nothing changes after reload | The console is in light mode | Settings → Visual mode → Dark |
 | One AWS service is still grey | AWS changed its internal tokens | Get the new base theme, put it in `base/`, run `python3 build.py` |
-| A service page is not themed | "Apply to iframes" is off | Turn it on in the Stylus options |
+| Part of a page is not themed | Stylus does not style iframes | Turn on iframe styling in the Stylus options |
 
 ## How to remove it
 
@@ -96,6 +104,6 @@ Stylus → **Manage** → untick the style, or delete it.
 
 ## Credits
 
-- Base theme: Gregory Becker, MIT licence (see `base/LICENSE`).
+- Base theme: [igreg](https://github.com/igreg) (Gregory Becker), MIT licence (see `base/LICENSE`).
 - Classic Dark colours: based on the classic Cloudscape dark palette (approximate values).
 - Unofficial project. It is not connected to Amazon Web Services.

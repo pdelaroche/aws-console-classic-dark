@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           AWS Console - Classic Dark
 @namespace      github.com/pdelaroche/aws-console-classic-dark
-@version        1.0.0
+@version        1.0.2
 @description    Classic AWS dark mode for the AWS console: navy background, grey text, orange highlights.
 @author         pdelaroche
 @license        MIT
@@ -23,7 +23,7 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
 
   /* Backgrounds (dark to light) */
   --tpl-bg:             #0f1b2a;
-  --tpl-panel:          #16191f;
+  --tpl-panel:          #142030;
   --tpl-surface:        #192534;
   --tpl-surface-2:      #1e2b3b;
   --tpl-hover:          #232f3e;
@@ -47,6 +47,14 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --tpl-accent:         #ff9900;
   --tpl-accent-hover:   #ffac31;
   --tpl-accent-active:  #ec7211;
+  --tpl-on-accent:      #0b0e14;
+
+  /* Links and info blue */
+  --tpl-link:           #59c2ff;
+  --tpl-link-hover:     #8cd0ff;
+
+  /* Text selection */
+  --tpl-selection:      #409fff4d;
 
   /* Side menu titles */
   --tpl-nav-title:      #e9ebed;
@@ -56,7 +64,6 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   /* Automatic values (do not edit) */
   --tpl-accent-soft:   color-mix(in srgb, var(--tpl-accent) 10%, transparent);
   --tpl-accent-softer: color-mix(in srgb, var(--tpl-accent) 14%, transparent);
-  --tpl-selection:     color-mix(in srgb, var(--tpl-accent) 30%, transparent);
 }
 
 body.awsui-polaris-dark-mode.awsui-one-theme,
@@ -201,18 +208,18 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-primary-200-evz9nt: #b8e2ff !important;
   --color-primary-200-o20dtd: #b8e2ff !important;
   --color-primary-200-vubr4w: #b8e2ff !important;
-  --color-primary-300-0qy8vv: #8cd0ff !important;
-  --color-primary-300-2rt5tg: #8cd0ff !important;
-  --color-primary-300-5q65ox: #8cd0ff !important;
-  --color-primary-300-63o2km: #8cd0ff !important;
-  --color-primary-300-ojomoj: #8cd0ff !important;
-  --color-primary-300-z0inwn: #8cd0ff !important;
-  --color-primary-400-4rf6uh: #59c2ff !important;
-  --color-primary-400-9jdrtg: #59c2ff !important;
-  --color-primary-400-jqxh0h: #59c2ff !important;
-  --color-primary-400-n8h4bx: #59c2ff !important;
-  --color-primary-400-v2wnw9: #59c2ff !important;
-  --color-primary-400-x68qyw: #59c2ff !important;
+  --color-primary-300-0qy8vv: var(--tpl-link-hover) !important;
+  --color-primary-300-2rt5tg: var(--tpl-link-hover) !important;
+  --color-primary-300-5q65ox: var(--tpl-link-hover) !important;
+  --color-primary-300-63o2km: var(--tpl-link-hover) !important;
+  --color-primary-300-ojomoj: var(--tpl-link-hover) !important;
+  --color-primary-300-z0inwn: var(--tpl-link-hover) !important;
+  --color-primary-400-4rf6uh: var(--tpl-link) !important;
+  --color-primary-400-9jdrtg: var(--tpl-link) !important;
+  --color-primary-400-jqxh0h: var(--tpl-link) !important;
+  --color-primary-400-n8h4bx: var(--tpl-link) !important;
+  --color-primary-400-v2wnw9: var(--tpl-link) !important;
+  --color-primary-400-x68qyw: var(--tpl-link) !important;
   --color-primary-500-4m805g: #39bae6 !important;
   --color-primary-500-9dxp0g: #39bae6 !important;
   --color-primary-500-bnmaxy: #39bae6 !important;
@@ -267,18 +274,18 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-info-100-xl2nfo: #d6eeff !important;
   --color-info-100-yck82s: #d6eeff !important;
   --color-info-100-ztux3v: #d6eeff !important;
-  --color-info-300-fbd9w4: #8cd0ff !important;
-  --color-info-300-gr03ol: #8cd0ff !important;
-  --color-info-300-q9xd1l: #8cd0ff !important;
-  --color-info-300-v9njtf: #8cd0ff !important;
-  --color-info-300-vyzy9x: #8cd0ff !important;
-  --color-info-300-zibj4c: #8cd0ff !important;
-  --color-info-400-674xac: #59c2ff !important;
-  --color-info-400-6iwt2u: #59c2ff !important;
-  --color-info-400-b9n5ih: #59c2ff !important;
-  --color-info-400-eq69kq: #59c2ff !important;
-  --color-info-400-mtbujr: #59c2ff !important;
-  --color-info-400-qlkllb: #59c2ff !important;
+  --color-info-300-fbd9w4: var(--tpl-link-hover) !important;
+  --color-info-300-gr03ol: var(--tpl-link-hover) !important;
+  --color-info-300-q9xd1l: var(--tpl-link-hover) !important;
+  --color-info-300-v9njtf: var(--tpl-link-hover) !important;
+  --color-info-300-vyzy9x: var(--tpl-link-hover) !important;
+  --color-info-300-zibj4c: var(--tpl-link-hover) !important;
+  --color-info-400-674xac: var(--tpl-link) !important;
+  --color-info-400-6iwt2u: var(--tpl-link) !important;
+  --color-info-400-b9n5ih: var(--tpl-link) !important;
+  --color-info-400-eq69kq: var(--tpl-link) !important;
+  --color-info-400-mtbujr: var(--tpl-link) !important;
+  --color-info-400-qlkllb: var(--tpl-link) !important;
   --color-info-600-14lpnx: #1f8ac0 !important;
   --color-info-600-6dqcyj: #1f8ac0 !important;
   --color-info-600-kzaqwv: #1f8ac0 !important;
@@ -477,48 +484,48 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-warning-1000-9gcolp: #1e1306 !important;
   --color-warning-1000-rnb4bc: #1e1306 !important;
   --color-warning-1000-rub2bu: #1e1306 !important;
-  --color-text-link-default-3feuld: #59c2ff !important;
-  --color-text-link-default-627r6x: #59c2ff !important;
-  --color-text-link-default-8xosh3: #59c2ff !important;
-  --color-text-link-default-hude44: #59c2ff !important;
-  --color-text-link-default-l3xbxj: #59c2ff !important;
-  --color-text-link-default-qabnuk: #59c2ff !important;
-  --color-text-link-default-rhby5q: #59c2ff !important;
-  --color-text-link-hover-2hfec2: #8cd0ff !important;
-  --color-text-link-hover-5bs9c7: #8cd0ff !important;
-  --color-text-link-hover-8t27yo: #8cd0ff !important;
-  --color-text-link-hover-br6snu: #8cd0ff !important;
-  --color-text-link-hover-fau0jw: #8cd0ff !important;
-  --color-text-link-hover-g5jgcm: #8cd0ff !important;
-  --color-text-link-hover-n1r6g0: #8cd0ff !important;
-  --color-text-link-secondary-default-4p0gj8: #59c2ff !important;
-  --color-text-link-secondary-default-6ui3do: #59c2ff !important;
-  --color-text-link-secondary-default-faojxr: #59c2ff !important;
-  --color-text-link-secondary-default-gyw365: #59c2ff !important;
-  --color-text-link-secondary-default-nrcd5g: #59c2ff !important;
-  --color-text-link-secondary-default-urew28: #59c2ff !important;
-  --color-text-link-secondary-default-w1afk5: #59c2ff !important;
-  --color-text-link-secondary-hover-0i95q7: #8cd0ff !important;
-  --color-text-link-secondary-hover-0kzmc4: #8cd0ff !important;
-  --color-text-link-secondary-hover-2n5e6m: #8cd0ff !important;
-  --color-text-link-secondary-hover-kql7rc: #8cd0ff !important;
-  --color-text-link-secondary-hover-n5wg3z: #8cd0ff !important;
-  --color-text-link-secondary-hover-oy8eob: #8cd0ff !important;
-  --color-text-link-secondary-hover-rqfhjb: #8cd0ff !important;
-  --color-text-link-info-default-kjlkol: #59c2ff !important;
-  --color-text-link-info-default-mdym76: #59c2ff !important;
-  --color-text-link-info-default-mgpk1w: #59c2ff !important;
-  --color-text-link-info-default-mrmt1i: #59c2ff !important;
-  --color-text-link-info-default-q1eh3d: #59c2ff !important;
-  --color-text-link-info-default-r8vwpt: #59c2ff !important;
-  --color-text-link-info-default-uwleer: #59c2ff !important;
-  --color-text-link-info-hover-7klehh: #8cd0ff !important;
-  --color-text-link-info-hover-95t4fa: #8cd0ff !important;
-  --color-text-link-info-hover-mhwxlv: #8cd0ff !important;
-  --color-text-link-info-hover-mu3ega: #8cd0ff !important;
-  --color-text-link-info-hover-os951m: #8cd0ff !important;
-  --color-text-link-info-hover-unx369: #8cd0ff !important;
-  --color-text-link-info-hover-wlgtui: #8cd0ff !important;
+  --color-text-link-default-3feuld: var(--tpl-link) !important;
+  --color-text-link-default-627r6x: var(--tpl-link) !important;
+  --color-text-link-default-8xosh3: var(--tpl-link) !important;
+  --color-text-link-default-hude44: var(--tpl-link) !important;
+  --color-text-link-default-l3xbxj: var(--tpl-link) !important;
+  --color-text-link-default-qabnuk: var(--tpl-link) !important;
+  --color-text-link-default-rhby5q: var(--tpl-link) !important;
+  --color-text-link-hover-2hfec2: var(--tpl-link-hover) !important;
+  --color-text-link-hover-5bs9c7: var(--tpl-link-hover) !important;
+  --color-text-link-hover-8t27yo: var(--tpl-link-hover) !important;
+  --color-text-link-hover-br6snu: var(--tpl-link-hover) !important;
+  --color-text-link-hover-fau0jw: var(--tpl-link-hover) !important;
+  --color-text-link-hover-g5jgcm: var(--tpl-link-hover) !important;
+  --color-text-link-hover-n1r6g0: var(--tpl-link-hover) !important;
+  --color-text-link-secondary-default-4p0gj8: var(--tpl-link) !important;
+  --color-text-link-secondary-default-6ui3do: var(--tpl-link) !important;
+  --color-text-link-secondary-default-faojxr: var(--tpl-link) !important;
+  --color-text-link-secondary-default-gyw365: var(--tpl-link) !important;
+  --color-text-link-secondary-default-nrcd5g: var(--tpl-link) !important;
+  --color-text-link-secondary-default-urew28: var(--tpl-link) !important;
+  --color-text-link-secondary-default-w1afk5: var(--tpl-link) !important;
+  --color-text-link-secondary-hover-0i95q7: var(--tpl-link-hover) !important;
+  --color-text-link-secondary-hover-0kzmc4: var(--tpl-link-hover) !important;
+  --color-text-link-secondary-hover-2n5e6m: var(--tpl-link-hover) !important;
+  --color-text-link-secondary-hover-kql7rc: var(--tpl-link-hover) !important;
+  --color-text-link-secondary-hover-n5wg3z: var(--tpl-link-hover) !important;
+  --color-text-link-secondary-hover-oy8eob: var(--tpl-link-hover) !important;
+  --color-text-link-secondary-hover-rqfhjb: var(--tpl-link-hover) !important;
+  --color-text-link-info-default-kjlkol: var(--tpl-link) !important;
+  --color-text-link-info-default-mdym76: var(--tpl-link) !important;
+  --color-text-link-info-default-mgpk1w: var(--tpl-link) !important;
+  --color-text-link-info-default-mrmt1i: var(--tpl-link) !important;
+  --color-text-link-info-default-q1eh3d: var(--tpl-link) !important;
+  --color-text-link-info-default-r8vwpt: var(--tpl-link) !important;
+  --color-text-link-info-default-uwleer: var(--tpl-link) !important;
+  --color-text-link-info-hover-7klehh: var(--tpl-link-hover) !important;
+  --color-text-link-info-hover-95t4fa: var(--tpl-link-hover) !important;
+  --color-text-link-info-hover-mhwxlv: var(--tpl-link-hover) !important;
+  --color-text-link-info-hover-mu3ega: var(--tpl-link-hover) !important;
+  --color-text-link-info-hover-os951m: var(--tpl-link-hover) !important;
+  --color-text-link-info-hover-unx369: var(--tpl-link-hover) !important;
+  --color-text-link-info-hover-wlgtui: var(--tpl-link-hover) !important;
   --color-text-link-decoration-default-0ivw7s: #59c2ff59 !important;
   --color-text-link-decoration-default-0x8fhu: #59c2ff59 !important;
   --color-text-link-decoration-default-62sh2m: #59c2ff59 !important;
@@ -531,48 +538,48 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-text-link-secondary-decoration-default-msz0tf: #59c2ff59 !important;
   --color-text-link-secondary-decoration-default-qunf7v: #59c2ff59 !important;
   --color-text-link-secondary-decoration-default-ufgjjr: #59c2ff59 !important;
-  --color-text-link-button-normal-default-2b5u43: #59c2ff !important;
-  --color-text-link-button-normal-default-9qieuf: #59c2ff !important;
-  --color-text-link-button-normal-default-b2mw1f: #59c2ff !important;
-  --color-text-link-button-normal-default-b2o09x: #59c2ff !important;
-  --color-text-link-button-normal-default-e6497p: #59c2ff !important;
-  --color-text-link-button-normal-default-srprth: #59c2ff !important;
-  --color-text-link-button-normal-default-vc8ids: #59c2ff !important;
-  --color-text-link-button-normal-hover-2w733x: #8cd0ff !important;
-  --color-text-link-button-normal-hover-69rfmq: #8cd0ff !important;
-  --color-text-link-button-normal-hover-dh0ymu: #8cd0ff !important;
-  --color-text-link-button-normal-hover-jrnyw3: #8cd0ff !important;
-  --color-text-link-button-normal-hover-xk6kwz: #8cd0ff !important;
-  --color-text-link-button-normal-hover-ymaenc: #8cd0ff !important;
-  --color-text-link-button-normal-hover-ztybwk: #8cd0ff !important;
-  --color-text-link-button-normal-active-9d4yxg: #59c2ff !important;
-  --color-text-link-button-normal-active-f0yaqx: #59c2ff !important;
-  --color-text-link-button-normal-active-i91lg7: #59c2ff !important;
-  --color-text-link-button-normal-active-js9ryu: #59c2ff !important;
-  --color-text-link-button-normal-active-lqdd7a: #59c2ff !important;
-  --color-text-link-button-normal-active-soehfd: #59c2ff !important;
-  --color-text-link-button-normal-active-vvk4hk: #59c2ff !important;
-  --color-text-button-link-default-ehnnq5: #59c2ff !important;
-  --color-text-button-link-default-i8e8iy: #59c2ff !important;
-  --color-text-button-link-default-j3au1p: #59c2ff !important;
-  --color-text-button-link-default-kcmwsx: #59c2ff !important;
-  --color-text-button-link-default-ril5ap: #59c2ff !important;
-  --color-text-button-link-default-vvunrs: #59c2ff !important;
-  --color-text-button-link-default-w6ikk4: #59c2ff !important;
-  --color-text-button-link-hover-1aopta: #8cd0ff !important;
-  --color-text-button-link-hover-2srq0t: #8cd0ff !important;
-  --color-text-button-link-hover-94aviz: #8cd0ff !important;
-  --color-text-button-link-hover-hmn4vf: #8cd0ff !important;
-  --color-text-button-link-hover-kvrc36: #8cd0ff !important;
-  --color-text-button-link-hover-vtxjr9: #8cd0ff !important;
-  --color-text-button-link-hover-yknbdw: #8cd0ff !important;
-  --color-text-button-link-active-154jw6: #59c2ff !important;
-  --color-text-button-link-active-2zjqbh: #59c2ff !important;
-  --color-text-button-link-active-48pxp0: #59c2ff !important;
-  --color-text-button-link-active-dqdjg3: #59c2ff !important;
-  --color-text-button-link-active-qu472f: #59c2ff !important;
-  --color-text-button-link-active-tlu8ug: #59c2ff !important;
-  --color-text-button-link-active-wg5y7u: #59c2ff !important;
+  --color-text-link-button-normal-default-2b5u43: var(--tpl-link) !important;
+  --color-text-link-button-normal-default-9qieuf: var(--tpl-link) !important;
+  --color-text-link-button-normal-default-b2mw1f: var(--tpl-link) !important;
+  --color-text-link-button-normal-default-b2o09x: var(--tpl-link) !important;
+  --color-text-link-button-normal-default-e6497p: var(--tpl-link) !important;
+  --color-text-link-button-normal-default-srprth: var(--tpl-link) !important;
+  --color-text-link-button-normal-default-vc8ids: var(--tpl-link) !important;
+  --color-text-link-button-normal-hover-2w733x: var(--tpl-link-hover) !important;
+  --color-text-link-button-normal-hover-69rfmq: var(--tpl-link-hover) !important;
+  --color-text-link-button-normal-hover-dh0ymu: var(--tpl-link-hover) !important;
+  --color-text-link-button-normal-hover-jrnyw3: var(--tpl-link-hover) !important;
+  --color-text-link-button-normal-hover-xk6kwz: var(--tpl-link-hover) !important;
+  --color-text-link-button-normal-hover-ymaenc: var(--tpl-link-hover) !important;
+  --color-text-link-button-normal-hover-ztybwk: var(--tpl-link-hover) !important;
+  --color-text-link-button-normal-active-9d4yxg: var(--tpl-link) !important;
+  --color-text-link-button-normal-active-f0yaqx: var(--tpl-link) !important;
+  --color-text-link-button-normal-active-i91lg7: var(--tpl-link) !important;
+  --color-text-link-button-normal-active-js9ryu: var(--tpl-link) !important;
+  --color-text-link-button-normal-active-lqdd7a: var(--tpl-link) !important;
+  --color-text-link-button-normal-active-soehfd: var(--tpl-link) !important;
+  --color-text-link-button-normal-active-vvk4hk: var(--tpl-link) !important;
+  --color-text-button-link-default-ehnnq5: var(--tpl-link) !important;
+  --color-text-button-link-default-i8e8iy: var(--tpl-link) !important;
+  --color-text-button-link-default-j3au1p: var(--tpl-link) !important;
+  --color-text-button-link-default-kcmwsx: var(--tpl-link) !important;
+  --color-text-button-link-default-ril5ap: var(--tpl-link) !important;
+  --color-text-button-link-default-vvunrs: var(--tpl-link) !important;
+  --color-text-button-link-default-w6ikk4: var(--tpl-link) !important;
+  --color-text-button-link-hover-1aopta: var(--tpl-link-hover) !important;
+  --color-text-button-link-hover-2srq0t: var(--tpl-link-hover) !important;
+  --color-text-button-link-hover-94aviz: var(--tpl-link-hover) !important;
+  --color-text-button-link-hover-hmn4vf: var(--tpl-link-hover) !important;
+  --color-text-button-link-hover-kvrc36: var(--tpl-link-hover) !important;
+  --color-text-button-link-hover-vtxjr9: var(--tpl-link-hover) !important;
+  --color-text-button-link-hover-yknbdw: var(--tpl-link-hover) !important;
+  --color-text-button-link-active-154jw6: var(--tpl-link) !important;
+  --color-text-button-link-active-2zjqbh: var(--tpl-link) !important;
+  --color-text-button-link-active-48pxp0: var(--tpl-link) !important;
+  --color-text-button-link-active-dqdjg3: var(--tpl-link) !important;
+  --color-text-button-link-active-qu472f: var(--tpl-link) !important;
+  --color-text-button-link-active-tlu8ug: var(--tpl-link) !important;
+  --color-text-button-link-active-wg5y7u: var(--tpl-link) !important;
   --color-text-accent-1mglsg: var(--tpl-accent) !important;
   --color-text-accent-31ogp5: var(--tpl-accent) !important;
   --color-text-accent-g64663: var(--tpl-accent) !important;
@@ -676,27 +683,27 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-border-button-primary-active-r3zzvt: var(--tpl-accent-active) !important;
   --color-border-button-primary-active-tvmztv: var(--tpl-accent-active) !important;
   --color-border-button-primary-active-w09byb: var(--tpl-accent-active) !important;
-  --color-text-button-primary-default-04icfp: var(--tpl-bg) !important;
-  --color-text-button-primary-default-2i01k6: var(--tpl-bg) !important;
-  --color-text-button-primary-default-j1adq7: var(--tpl-bg) !important;
-  --color-text-button-primary-default-mwl31m: var(--tpl-bg) !important;
-  --color-text-button-primary-default-npn2v3: var(--tpl-bg) !important;
-  --color-text-button-primary-default-sglaej: var(--tpl-bg) !important;
-  --color-text-button-primary-default-twcxgo: var(--tpl-bg) !important;
-  --color-text-button-primary-hover-2baqo4: var(--tpl-bg) !important;
-  --color-text-button-primary-hover-5hs2rl: var(--tpl-bg) !important;
-  --color-text-button-primary-hover-fbvarv: var(--tpl-bg) !important;
-  --color-text-button-primary-hover-fro51b: var(--tpl-bg) !important;
-  --color-text-button-primary-hover-j9gsde: var(--tpl-bg) !important;
-  --color-text-button-primary-hover-pw12ep: var(--tpl-bg) !important;
-  --color-text-button-primary-hover-xtd6ag: var(--tpl-bg) !important;
-  --color-text-button-primary-active-dkwkja: var(--tpl-bg) !important;
-  --color-text-button-primary-active-dnmkc1: var(--tpl-bg) !important;
-  --color-text-button-primary-active-e4e970: var(--tpl-bg) !important;
-  --color-text-button-primary-active-mostrh: var(--tpl-bg) !important;
-  --color-text-button-primary-active-olhy1j: var(--tpl-bg) !important;
-  --color-text-button-primary-active-refmba: var(--tpl-bg) !important;
-  --color-text-button-primary-active-s2puls: var(--tpl-bg) !important;
+  --color-text-button-primary-default-04icfp: var(--tpl-on-accent) !important;
+  --color-text-button-primary-default-2i01k6: var(--tpl-on-accent) !important;
+  --color-text-button-primary-default-j1adq7: var(--tpl-on-accent) !important;
+  --color-text-button-primary-default-mwl31m: var(--tpl-on-accent) !important;
+  --color-text-button-primary-default-npn2v3: var(--tpl-on-accent) !important;
+  --color-text-button-primary-default-sglaej: var(--tpl-on-accent) !important;
+  --color-text-button-primary-default-twcxgo: var(--tpl-on-accent) !important;
+  --color-text-button-primary-hover-2baqo4: var(--tpl-on-accent) !important;
+  --color-text-button-primary-hover-5hs2rl: var(--tpl-on-accent) !important;
+  --color-text-button-primary-hover-fbvarv: var(--tpl-on-accent) !important;
+  --color-text-button-primary-hover-fro51b: var(--tpl-on-accent) !important;
+  --color-text-button-primary-hover-j9gsde: var(--tpl-on-accent) !important;
+  --color-text-button-primary-hover-pw12ep: var(--tpl-on-accent) !important;
+  --color-text-button-primary-hover-xtd6ag: var(--tpl-on-accent) !important;
+  --color-text-button-primary-active-dkwkja: var(--tpl-on-accent) !important;
+  --color-text-button-primary-active-dnmkc1: var(--tpl-on-accent) !important;
+  --color-text-button-primary-active-e4e970: var(--tpl-on-accent) !important;
+  --color-text-button-primary-active-mostrh: var(--tpl-on-accent) !important;
+  --color-text-button-primary-active-olhy1j: var(--tpl-on-accent) !important;
+  --color-text-button-primary-active-refmba: var(--tpl-on-accent) !important;
+  --color-text-button-primary-active-s2puls: var(--tpl-on-accent) !important;
   --color-border-button-normal-hover-0pwlzm: var(--tpl-accent) !important;
   --color-border-button-normal-hover-167wjl: var(--tpl-accent) !important;
   --color-border-button-normal-hover-61h5rl: var(--tpl-accent) !important;
@@ -725,13 +732,13 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-border-control-checked-jhvw4f: var(--tpl-accent) !important;
   --color-border-control-checked-o1zph2: var(--tpl-accent) !important;
   --color-border-control-checked-zljpht: var(--tpl-accent) !important;
-  --color-foreground-control-default-acusfg: var(--tpl-bg) !important;
-  --color-foreground-control-default-at2yd9: var(--tpl-bg) !important;
-  --color-foreground-control-default-eto4wy: var(--tpl-bg) !important;
-  --color-foreground-control-default-poakg0: var(--tpl-bg) !important;
-  --color-foreground-control-default-rac8i1: var(--tpl-bg) !important;
-  --color-foreground-control-default-vycayl: var(--tpl-bg) !important;
-  --color-foreground-control-default-z8tr7i: var(--tpl-bg) !important;
+  --color-foreground-control-default-acusfg: var(--tpl-on-accent) !important;
+  --color-foreground-control-default-at2yd9: var(--tpl-on-accent) !important;
+  --color-foreground-control-default-eto4wy: var(--tpl-on-accent) !important;
+  --color-foreground-control-default-poakg0: var(--tpl-on-accent) !important;
+  --color-foreground-control-default-rac8i1: var(--tpl-on-accent) !important;
+  --color-foreground-control-default-vycayl: var(--tpl-on-accent) !important;
+  --color-foreground-control-default-z8tr7i: var(--tpl-on-accent) !important;
   --color-border-toggle-button-normal-pressed-ab77je: var(--tpl-accent) !important;
   --color-border-toggle-button-normal-pressed-ifzovu: var(--tpl-accent) !important;
   --color-border-toggle-button-normal-pressed-j0kbz8: var(--tpl-accent) !important;
@@ -850,13 +857,13 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-background-side-navigation-item-active-collapsed-dsekgc: var(--tpl-accent) !important;
   --color-background-side-navigation-item-active-collapsed-jczh49: var(--tpl-accent) !important;
   --color-background-side-navigation-item-active-collapsed-sj02gw: var(--tpl-accent) !important;
-  --color-text-side-navigation-item-active-collapsed-1yl9n8: var(--tpl-bg) !important;
-  --color-text-side-navigation-item-active-collapsed-4g0484: var(--tpl-bg) !important;
-  --color-text-side-navigation-item-active-collapsed-5rhubl: var(--tpl-bg) !important;
-  --color-text-side-navigation-item-active-collapsed-621hfg: var(--tpl-bg) !important;
-  --color-text-side-navigation-item-active-collapsed-kwpe9n: var(--tpl-bg) !important;
-  --color-text-side-navigation-item-active-collapsed-nabujf: var(--tpl-bg) !important;
-  --color-text-side-navigation-item-active-collapsed-nuo5s6: var(--tpl-bg) !important;
+  --color-text-side-navigation-item-active-collapsed-1yl9n8: var(--tpl-on-accent) !important;
+  --color-text-side-navigation-item-active-collapsed-4g0484: var(--tpl-on-accent) !important;
+  --color-text-side-navigation-item-active-collapsed-5rhubl: var(--tpl-on-accent) !important;
+  --color-text-side-navigation-item-active-collapsed-621hfg: var(--tpl-on-accent) !important;
+  --color-text-side-navigation-item-active-collapsed-kwpe9n: var(--tpl-on-accent) !important;
+  --color-text-side-navigation-item-active-collapsed-nabujf: var(--tpl-on-accent) !important;
+  --color-text-side-navigation-item-active-collapsed-nuo5s6: var(--tpl-on-accent) !important;
   --color-background-side-navigation-item-icon-hover-ctmjx8: var(--tpl-accent-softer) !important;
   --color-background-side-navigation-item-icon-hover-dwdvhs: var(--tpl-accent-softer) !important;
   --color-background-side-navigation-item-icon-hover-e5eh06: var(--tpl-accent-softer) !important;
@@ -885,13 +892,13 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-background-layout-toggle-selected-active-lon4qo: var(--tpl-accent) !important;
   --color-background-layout-toggle-selected-active-y6n8b3: var(--tpl-accent) !important;
   --color-background-layout-toggle-selected-active-zcl8w3: var(--tpl-accent) !important;
-  --color-text-layout-toggle-selected-4t49fq: var(--tpl-bg) !important;
-  --color-text-layout-toggle-selected-cri6sd: var(--tpl-bg) !important;
-  --color-text-layout-toggle-selected-g6uufq: var(--tpl-bg) !important;
-  --color-text-layout-toggle-selected-rty4rx: var(--tpl-bg) !important;
-  --color-text-layout-toggle-selected-tpyqsm: var(--tpl-bg) !important;
-  --color-text-layout-toggle-selected-xpximc: var(--tpl-bg) !important;
-  --color-text-layout-toggle-selected-z4uc8b: var(--tpl-bg) !important;
+  --color-text-layout-toggle-selected-4t49fq: var(--tpl-on-accent) !important;
+  --color-text-layout-toggle-selected-cri6sd: var(--tpl-on-accent) !important;
+  --color-text-layout-toggle-selected-g6uufq: var(--tpl-on-accent) !important;
+  --color-text-layout-toggle-selected-rty4rx: var(--tpl-on-accent) !important;
+  --color-text-layout-toggle-selected-tpyqsm: var(--tpl-on-accent) !important;
+  --color-text-layout-toggle-selected-xpximc: var(--tpl-on-accent) !important;
+  --color-text-layout-toggle-selected-z4uc8b: var(--tpl-on-accent) !important;
   --color-background-progress-bar-value-default-3ddu5u: var(--tpl-accent) !important;
   --color-background-progress-bar-value-default-663d5f: var(--tpl-accent) !important;
   --color-background-progress-bar-value-default-69ydqg: var(--tpl-accent) !important;
@@ -951,21 +958,21 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-text-status-warning-r365u3: #ffb454 !important;
   --color-text-status-warning-wig4gt: #ffb454 !important;
   --color-text-status-warning-ylxn5k: #ffb454 !important;
-  --color-text-status-info-0gyv0g: #59c2ff !important;
-  --color-text-status-info-2ftgrk: #59c2ff !important;
-  --color-text-status-info-9hs4f1: #59c2ff !important;
-  --color-text-status-info-c3q8b6: #59c2ff !important;
-  --color-text-status-info-qrft38: #59c2ff !important;
-  --color-text-status-info-r68ub2: #59c2ff !important;
-  --color-text-status-info-su6k9n: #59c2ff !important;
-  --color-text-status-info-ue8bd2: #59c2ff !important;
-  --color-text-status-inactive-eu7bes: var(--tpl-text-secondary) !important;
-  --color-text-status-inactive-fqjc97: var(--tpl-text-secondary) !important;
-  --color-text-status-inactive-gy7337: var(--tpl-text-secondary) !important;
-  --color-text-status-inactive-nt2hhw: var(--tpl-text-secondary) !important;
-  --color-text-status-inactive-tg9r8q: var(--tpl-text-secondary) !important;
-  --color-text-status-inactive-xpnio2: var(--tpl-text-secondary) !important;
-  --color-text-status-inactive-y8pkz7: var(--tpl-text-secondary) !important;
+  --color-text-status-info-0gyv0g: var(--tpl-link) !important;
+  --color-text-status-info-2ftgrk: var(--tpl-link) !important;
+  --color-text-status-info-9hs4f1: var(--tpl-link) !important;
+  --color-text-status-info-c3q8b6: var(--tpl-link) !important;
+  --color-text-status-info-qrft38: var(--tpl-link) !important;
+  --color-text-status-info-r68ub2: var(--tpl-link) !important;
+  --color-text-status-info-su6k9n: var(--tpl-link) !important;
+  --color-text-status-info-ue8bd2: var(--tpl-link) !important;
+  --color-text-status-inactive-eu7bes: #8a9199 !important;
+  --color-text-status-inactive-fqjc97: #8a9199 !important;
+  --color-text-status-inactive-gy7337: #8a9199 !important;
+  --color-text-status-inactive-nt2hhw: #8a9199 !important;
+  --color-text-status-inactive-tg9r8q: #8a9199 !important;
+  --color-text-status-inactive-xpnio2: #8a9199 !important;
+  --color-text-status-inactive-y8pkz7: #8a9199 !important;
   --color-border-status-success-8z5f8u: #aad94c !important;
   --color-border-status-success-abs39o: #aad94c !important;
   --color-border-status-success-fh5ph4: #aad94c !important;
@@ -987,13 +994,13 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-border-status-warning-le4lds: #ffb454 !important;
   --color-border-status-warning-s79l22: #ffb454 !important;
   --color-border-status-warning-zj1tu9: #ffb454 !important;
-  --color-border-status-info-2c65a2: #59c2ff !important;
-  --color-border-status-info-2zt73n: #59c2ff !important;
-  --color-border-status-info-e5c14y: #59c2ff !important;
-  --color-border-status-info-qf6jok: #59c2ff !important;
-  --color-border-status-info-qxhspt: #59c2ff !important;
-  --color-border-status-info-qy1hqp: #59c2ff !important;
-  --color-border-status-info-yzkqwx: #59c2ff !important;
+  --color-border-status-info-2c65a2: var(--tpl-link) !important;
+  --color-border-status-info-2zt73n: var(--tpl-link) !important;
+  --color-border-status-info-e5c14y: var(--tpl-link) !important;
+  --color-border-status-info-qf6jok: var(--tpl-link) !important;
+  --color-border-status-info-qxhspt: var(--tpl-link) !important;
+  --color-border-status-info-qy1hqp: var(--tpl-link) !important;
+  --color-border-status-info-yzkqwx: var(--tpl-link) !important;
   --color-background-status-success-1woffs: #121a0c !important;
   --color-background-status-success-2t106u: #121a0c !important;
   --color-background-status-success-ac915q: #121a0c !important;
@@ -1112,12 +1119,12 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-text-flashbar-icon-warning-cyxpyy: #ffb454 !important;
   --color-text-flashbar-icon-warning-iejk62: #ffb454 !important;
   --color-text-flashbar-icon-warning-ojtnxb: #ffb454 !important;
-  --color-text-flashbar-icon-info-6gjbnj: #59c2ff !important;
-  --color-text-flashbar-icon-info-c3o0l8: #59c2ff !important;
-  --color-text-flashbar-icon-info-kklzmd: #59c2ff !important;
-  --color-text-flashbar-icon-info-lobe9x: #59c2ff !important;
-  --color-text-flashbar-icon-info-o9yimf: #59c2ff !important;
-  --color-text-flashbar-icon-info-vk74qo: #59c2ff !important;
+  --color-text-flashbar-icon-info-6gjbnj: var(--tpl-link) !important;
+  --color-text-flashbar-icon-info-c3o0l8: var(--tpl-link) !important;
+  --color-text-flashbar-icon-info-kklzmd: var(--tpl-link) !important;
+  --color-text-flashbar-icon-info-lobe9x: var(--tpl-link) !important;
+  --color-text-flashbar-icon-info-o9yimf: var(--tpl-link) !important;
+  --color-text-flashbar-icon-info-vk74qo: var(--tpl-link) !important;
   --color-text-alert-icon-success-16wq81: #aad94c !important;
   --color-text-alert-icon-success-1ldpm2: #aad94c !important;
   --color-text-alert-icon-success-6gkkui: #aad94c !important;
@@ -1136,12 +1143,12 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-text-alert-icon-warning-lan9qr: #ffb454 !important;
   --color-text-alert-icon-warning-md6qkr: #ffb454 !important;
   --color-text-alert-icon-warning-wbntc0: #ffb454 !important;
-  --color-text-alert-icon-info-83aits: #59c2ff !important;
-  --color-text-alert-icon-info-i9wbc0: #59c2ff !important;
-  --color-text-alert-icon-info-ox6xrs: #59c2ff !important;
-  --color-text-alert-icon-info-rwhxzh: #59c2ff !important;
-  --color-text-alert-icon-info-s57yms: #59c2ff !important;
-  --color-text-alert-icon-info-ud5q0o: #59c2ff !important;
+  --color-text-alert-icon-info-83aits: var(--tpl-link) !important;
+  --color-text-alert-icon-info-i9wbc0: var(--tpl-link) !important;
+  --color-text-alert-icon-info-ox6xrs: var(--tpl-link) !important;
+  --color-text-alert-icon-info-rwhxzh: var(--tpl-link) !important;
+  --color-text-alert-icon-info-s57yms: var(--tpl-link) !important;
+  --color-text-alert-icon-info-ud5q0o: var(--tpl-link) !important;
   --color-background-badge-green-0cml33: #aad94c26 !important;
   --color-background-badge-green-1bcjh0: #aad94c26 !important;
   --color-background-badge-green-7yl9sa: #aad94c26 !important;
@@ -1173,15 +1180,15 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-text-badge-green-ourl0s: #aad94c !important;
   --color-text-badge-green-riw4b9: #aad94c !important;
   --color-text-badge-green-xkzw5d: #aad94c !important;
-  --color-text-badge-blue-cq2uzn: #59c2ff !important;
-  --color-text-badge-blue-d5543a: #59c2ff !important;
-  --color-text-badge-blue-e70asl: #59c2ff !important;
-  --color-text-badge-blue-e7a2l0: #59c2ff !important;
-  --color-text-badge-blue-ftkchm: #59c2ff !important;
-  --color-text-badge-blue-mox3nx: #59c2ff !important;
-  --color-text-badge-blue-orofna: #59c2ff !important;
-  --color-text-badge-blue-r39mon: #59c2ff !important;
-  --color-text-badge-blue-ylhvoq: #59c2ff !important;
+  --color-text-badge-blue-cq2uzn: var(--tpl-link) !important;
+  --color-text-badge-blue-d5543a: var(--tpl-link) !important;
+  --color-text-badge-blue-e70asl: var(--tpl-link) !important;
+  --color-text-badge-blue-e7a2l0: var(--tpl-link) !important;
+  --color-text-badge-blue-ftkchm: var(--tpl-link) !important;
+  --color-text-badge-blue-mox3nx: var(--tpl-link) !important;
+  --color-text-badge-blue-orofna: var(--tpl-link) !important;
+  --color-text-badge-blue-r39mon: var(--tpl-link) !important;
+  --color-text-badge-blue-ylhvoq: var(--tpl-link) !important;
   --color-text-badge-red-5nipcb: #f07178 !important;
   --color-text-badge-red-60jprp: #f07178 !important;
   --color-text-badge-red-6cbtty: #f07178 !important;
@@ -1259,13 +1266,13 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
   --color-text-visual-accent-yellow-sx6w4g: #ffb454 !important;
   --color-text-visual-accent-yellow-y3fdzq: #ffb454 !important;
   --color-text-visual-accent-yellow-zx4xt1: #ffb454 !important;
-  --color-text-visual-accent-indigo-7jjzus: #59c2ff !important;
-  --color-text-visual-accent-indigo-95kts9: #59c2ff !important;
-  --color-text-visual-accent-indigo-cpw7jq: #59c2ff !important;
-  --color-text-visual-accent-indigo-npdeuo: #59c2ff !important;
-  --color-text-visual-accent-indigo-tmhh2w: #59c2ff !important;
-  --color-text-visual-accent-indigo-u9dybt: #59c2ff !important;
-  --color-text-visual-accent-indigo-z73u1l: #59c2ff !important;
+  --color-text-visual-accent-indigo-7jjzus: var(--tpl-link) !important;
+  --color-text-visual-accent-indigo-95kts9: var(--tpl-link) !important;
+  --color-text-visual-accent-indigo-cpw7jq: var(--tpl-link) !important;
+  --color-text-visual-accent-indigo-npdeuo: var(--tpl-link) !important;
+  --color-text-visual-accent-indigo-tmhh2w: var(--tpl-link) !important;
+  --color-text-visual-accent-indigo-u9dybt: var(--tpl-link) !important;
+  --color-text-visual-accent-indigo-z73u1l: var(--tpl-link) !important;
   --color-text-visual-accent-green-1496t2: #aad94c !important;
   --color-text-visual-accent-green-bmtqm3: #aad94c !important;
   --color-text-visual-accent-green-i9t8cq: #aad94c !important;
@@ -1340,13 +1347,13 @@ body.awsui-polaris-dark-mode.awsui-one-theme,
 
 /* ---- Non-Cloudscape bits (stable ids/classes) ---- */
 
-/* Unified console header: match the Ayu background */
+/* Unified console header: match --tpl-bg */
 .awsui-polaris-dark-mode #awsc-nav-header > nav {
   background-color: var(--tpl-bg) !important;
 }
 
-/* Side navigation section titles ("Instances", "Images", ...) in Ayu orange;
-   the current page keeps the Ayu accent (var(--tpl-accent)).
+/* Side navigation section titles ("Instances", "Images", ...) in --tpl-nav-title;
+   the current page keeps --tpl-accent.
    1. Cloudscape expandable sections (EC2, S3, EKS, ...): label and chevron.
    2. Cloudscape section groups (Billing and Cost Management, ...).
    3. CloudWatch's own side navigation (hard-coded #fec61d). */
@@ -1357,12 +1364,12 @@ body.awsui-polaris-dark-mode.awsui-one-theme .navigation-header-section-title {
   color: var(--tpl-nav-title) !important;
 }
 
-/* Side navigation title (service name, e.g. "EC2") in Ayu orange. */
+/* Side navigation title (service name, e.g. "EC2") in --tpl-nav-title. */
 body.awsui-polaris-dark-mode.awsui-one-theme nav [class*="awsui_header-link_"] {
   color: var(--tpl-nav-title) !important;
 }
 
-/* Text selection, as in the editor theme */
+/* Text selection, from --tpl-selection */
 .awsui-polaris-dark-mode ::selection {
   background-color: var(--tpl-selection);
 }

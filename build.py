@@ -12,26 +12,23 @@ PALETTE = ROOT / "palette.css"
 OUT = ROOT / "aws-classic-dark.user.css"
 
 GITHUB_USER = "pdelaroche"   # change to your GitHub user name
-VERSION = "1.0.0"
+VERSION = "1.0.2"
 
 SELECTORS = """body.awsui-polaris-dark-mode.awsui-one-theme,
 .awsui-polaris-dark-mode.awsui-one-theme .awsui-context-top-navigation,
 .awsui-polaris-dark-mode.awsui-one-theme .awsui-context-content-header,
 .awsui-polaris-dark-mode.awsui-one-theme .awsui-context-app-layout-toolbar"""
 
-# Ayu colour in the base theme  ->  palette variable
-COLOURS = {
-    # backgrounds
+# Neutral scale: only applied to --color-neutral-* tokens.
+NEUTRALS = {
     "#0b0e14": "var(--tpl-bg)",
     "#0f131a": "var(--tpl-panel)",
     "#131721": "var(--tpl-surface)",
     "#171b24": "var(--tpl-surface-2)",
     "#1c212b": "var(--tpl-hover)",
-    # borders
     "#232834": "var(--tpl-border-soft)",
     "#2d3340": "var(--tpl-border-mid)",
     "#3d4350": "var(--tpl-border)",
-    # text
     "#565b66": "var(--tpl-text-faint)",
     "#6c7380": "var(--tpl-text-muted)",
     "#8a9199": "var(--tpl-text-secondary)",
@@ -40,22 +37,47 @@ COLOURS = {
     "#cccac2": "var(--tpl-text-strong)",
     "#d9d7ce": "var(--tpl-text-bright)",
     "#e6e1cf": "var(--tpl-heading)",
-    # highlights (8-digit values first)
+}
+
+# All other lines. Colours not listed here keep the base theme value
+# (status colours, badges, --color-text-status-inactive, ...).
+OTHERS = {
+    "#0f131a": "var(--tpl-panel)",        # code view
+    "#e6e1cf": "var(--tpl-heading)",      # headings, breadcrumbs, top nav title
+    "#0b0e14": "var(--tpl-on-accent)",    # text and icons on orange
     "#e6b4501a": "var(--tpl-accent-soft)",
     "#e6b45024": "var(--tpl-accent-softer)",
     "#e6b450": "var(--tpl-accent)",
     "#f0c46a": "var(--tpl-accent-hover)",
     "#ffcc66": "var(--tpl-accent-hover)",
     "#d4a23e": "var(--tpl-accent-active)",
-    # text selection
+    "#59c2ff": "var(--tpl-link)",
+    "#8cd0ff": "var(--tpl-link-hover)",
     "#409fff4d": "var(--tpl-selection)",
+}
+
+
+def swap(line, table):
+    for hex_value in sorted(table, key=len, reverse=True):
+        pattern = re.compile(re.escape(hex_value) + r"(?![0-9a-fA-F])", re.I)
+        line = pattern.sub(table[hex_value], line)
+    return line
+
+
+# Base comments that talk about Ayu colours -> neutral wording
+COMMENTS = {
+    "match the Ayu background": "match --tpl-bg",
+    "in Ayu orange;": "in --tpl-nav-title;",
+    "in Ayu orange.": "in --tpl-nav-title.",
+    "the current page keeps the Ayu accent (var(--tpl-accent)).":
+        "the current page keeps --tpl-accent.",
+    "Text selection, as in the editor theme": "Text selection, from --tpl-selection",
 }
 
 DERIVED = """
   /* Automatic values (do not edit) */
   --tpl-accent-soft:   color-mix(in srgb, var(--tpl-accent) 10%, transparent);
   --tpl-accent-softer: color-mix(in srgb, var(--tpl-accent) 14%, transparent);
-  --tpl-selection:     color-mix(in srgb, var(--tpl-accent) 30%, transparent);
 """
 
 
@@ -67,16 +89,24 @@ def main():
     body = base.split("\n", 1)[1]
     body = body[body.index("*/") + 2:].lstrip("\n")
 
-    # Replace Ayu colours with palette variables.
-    for hex_value in sorted(COLOURS, key=len, reverse=True):
-        pattern = re.compile(re.escape(hex_value) + r"(?![0-9a-fA-F])", re.I)
-        body = pattern.sub(COLOURS[hex_value], body)
+    # Unified console header uses the page background, not the on-accent colour.
+    body = body.replace("#awsc-nav-header > nav {\n  background-color: #0b0e14",
+                        "#awsc-nav-header > nav {\n  background-color: var(--tpl-bg)")
+
+    # Replace Ayu colours with palette variables, line by line.
+    body = "\n".join(
+        swap(line, NEUTRALS if "--color-neutral-" in line else OTHERS)
+        for line in body.split("\n")
+    )
 
     # Side menu titles: Ayu orange -> palette (only in the non-token rules).
     head, sep, tail = body.partition("/* ---- Non-Cloudscape bits")
     tail = tail.replace("color: #ff8f40 !important;",
                         "color: var(--tpl-nav-title) !important;")
     body = head + sep + tail
+
+    for old, new in COMMENTS.items():
+        body = body.replace(old, new)
 
     header = f"""/* ==UserStyle==
 @name           AWS Console - Classic Dark

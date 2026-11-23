@@ -11,7 +11,7 @@ block below. Please make a new palette with this style:
 
 Rules:
 - Keep the same variable names. Do not add or remove variables.
-- Use hex colours (#rrggbb).
+- Use hex colours (#rrggbb). Only --tpl-selection uses #rrggbbaa.
 - Backgrounds go from dark (--tpl-bg) to lighter (--tpl-hover).
 - Borders go from dark (--tpl-border-soft) to lighter (--tpl-border).
 - Text goes from dark (--tpl-text-faint) to light (--tpl-heading).
@@ -19,6 +19,9 @@ Rules:
   (contrast of at least 4.5:1).
 - --tpl-accent must be easy to see on --tpl-bg.
   --tpl-accent-hover is a bit lighter. --tpl-accent-active is a bit darker.
+- --tpl-on-accent must be easy to read on --tpl-accent.
+- --tpl-selection is a transparent colour (#rrggbbaa).
+- --tpl-link must be easy to read on --tpl-bg. --tpl-link-hover is a bit lighter.
 - Return ONLY the PALETTE block, with the same comments.
 
 My current PALETTE block:
